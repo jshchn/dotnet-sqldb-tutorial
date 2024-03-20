@@ -1,0 +1,13 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: aspwebappdemo-workflow
+  namespace: namespace-workflow-1710911960309
+spec:
+  type: LoadBalancer
+  selector:
+    app: aspwebappdemo-workflow
+  ports:
+    - protocol: TCP
+      port: 5000
+      targetPort: 5000

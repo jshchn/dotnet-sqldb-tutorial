@@ -1,0 +1,22 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: aspwebappdemo-workflow
+  labels:
+    app: aspwebappdemo-workflow
+  namespace: namespace-workflow-1710911960309
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: aspwebappdemo-workflow
+  template:
+    metadata:
+      labels:
+        app: aspwebappdemo-workflow
+    spec:
+      containers:
+        - name: aspwebappdemo-workflow
+          image: acrwebappbnmpoc.azurecr.io/image-workflow-1710911960309:latest
+          ports:
+            - containerPort: 5000
